@@ -10,6 +10,8 @@ can find the original documentation for CRA in [HOWTO.md](./HOWTO.md).
 
 This application uses GoodData Cloud or GoodData.CN as a backend. Please note, that in the developer tools context, we refer to GoodData Cloud and GoodData.CN using the codename `tiger` (for example in the npm package names and variable names).
 
+[Changes made compared with basic setup](./CHANGES.md)
+
 ### Authentication and CORS
 
 When building and deploying your application on top of GoodData Cloud/GoodData.CN backend you will sooner or later run into a delicate
@@ -96,13 +98,3 @@ npm run build-with-explicit-hostname
 ```
 
 Built like this, the application will connect to the GoodData Analytical Backend hosted at the host specified in `src/constants.ts` in `backend` field.
-
-## Additional steps made to tweak it
-
-1. edited src/constants.ts - add backend and workspace id
-2. export TIGER_API_TOKEN specific for my backend
-3. yarn refresh-md to get full list of components in src/md/full.ts
-4. default page in src/routes/AppRouter.tsx
-    - line 2+34: removed redirect
-    - line 31: special content for intial dashboard
-5. src/routes/Home.tsx - added dashboard content

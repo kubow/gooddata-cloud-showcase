@@ -8,6 +8,8 @@ import Login from "./Login";
 import Logout from "./Logout";
 import Welcome from "./Welcome";
 import Home from "./Home";
+import Insight from "./Insight";
+import Edit from "./Edit";
 
 import styles from "./AppRouter.module.scss";
 
@@ -28,7 +30,9 @@ const AppRouter: React.FC = () => {
                 <WorkspaceProvider>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/welcome" component={Welcome} />
-                    <Route exact path="/dashboard" component={() => <Page>Main selected dashboard</Page>} />
+                    <Route exact path="/in" component={Insight} />
+                    <Route exact path="/edit" component={Edit} />
+                    <Route exact path="/dashboard" component={() => <Page>Content for non-logged users <br /><br /><br /> Empty NOW </Page>} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/logout" component={Logout} />
                     {/* DELETE THIS LINE <Redirect to="/welcome" />*/} 
