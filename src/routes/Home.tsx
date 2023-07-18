@@ -7,7 +7,7 @@ import Page from "../components/Page";
 
 const Home: React.FC = () => {
     return <Page>
-        <Dashboard dashboard={Md.Dashboards._1Overview} />
+        <Dashboard dashboard={Md.Dashboards._1Overview}></Dashboard>
     </Page>;
 };
 

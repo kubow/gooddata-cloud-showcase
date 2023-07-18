@@ -9,7 +9,8 @@ import Logout from "./Logout";
 import Welcome from "./Welcome";
 import Home from "./Home";
 import Insight from "./Insight";
-import Edit from "./Edit";
+import Custom from "./Custom";
+import Visualize from "./Visualize";
 
 import styles from "./AppRouter.module.scss";
 
@@ -31,7 +32,8 @@ const AppRouter: React.FC = () => {
                     <Route exact path="/" component={Home} />
                     <Route exact path="/welcome" component={Welcome} />
                     <Route exact path="/in" component={Insight} />
-                    <Route exact path="/edit" component={Edit} />
+                    <Route exact path="/insight" component={Custom} />
+                    <Route exact path="/custom" component={Visualize} />
                     <Route exact path="/dashboard" component={() => <Page>Content for non-logged users <br /><br /><br /> Empty NOW </Page>} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/logout" component={Logout} />

@@ -18,10 +18,13 @@ const Links: React.FC = () => {
                 Dashboard
             </NavLink>
             <NavLink to={"/in"} className={styles.Link} activeClassName={styles.LinkActive} exact>
-                Insight
+                Insight re-used
             </NavLink>
-            <NavLink to={"/edit"} className={styles.Link} activeClassName={styles.LinkActive} exact>
-                Insight editor
+            <NavLink to={"/insight"} className={styles.Link} activeClassName={styles.LinkActive} exact>
+                Insight custom
+            </NavLink>
+            <NavLink to={"/custom"} className={styles.Link} activeClassName={styles.LinkActive} exact>
+                Custom visualization
             </NavLink>
         </>
     );
