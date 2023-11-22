@@ -1,23 +1,43 @@
-import React from "react";
+import * as Md from "../md/full";
+import { useInsightDataView } from "@gooddata/sdk-ui";
+import { idRef } from "@gooddata/sdk-model";
 
-import * as Md from "../md/full"
+//import Page from "../components/Page";
 
-import Page from "../components/Page";
+export const CustomViz = () => {
+    const { result, error, status } = useInsightDataView({
+        insight: idRef(Md.Insights.ActiveCustomersBreakdown),
+    });
 
+    if (error) {
+        console.error(error);
+        return <div>Error...</div>;
+    }
 
-const style = {height: 400};
+    if (status !== "success" || !result) return <div>Loading...</div>;
 
+    console.log(result.data().series().toArray());
+    const slices = result.data().slices().toArray();
+    console.log(slices);
 
-const Insight: React.FC = () => {
-    return <Page>
-        <div style={style}>
-            <p>Variable overview</p>
-            <p>{Md.NetOrders.measure.localIdentifier} : </p>
-            <p>{Md.ActiveCustomers.measure.localIdentifier} : </p>
-            <p>{Md.Returns.measure.definition.measureDefinition.computeRatio} : </p>
-        </div>
-           
-    </Page>;
+    return (
+        <table>
+            <tbody>
+                {slices.map((slice) => {
+                    const title = slice.sliceTitles().join(" - ");
+                    const value = slice
+                        .dataPoints()
+                        .map((dp) => dp.rawValue)
+                        .join(", ");
+
+                    return (
+                        <tr key={title}>
+                            <td>{title}</td>
+                            <td>{value}</td>
+                        </tr>
+                    );
+                })}
+            </tbody>
+        </table>
+    );
 };
-
-export default Insight;

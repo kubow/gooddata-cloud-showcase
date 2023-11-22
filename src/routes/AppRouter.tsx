@@ -10,7 +10,7 @@ import Welcome from "./Welcome";
 import Home from "./Home";
 import Insight from "./Insight";
 import Custom from "./Custom";
-import Visualize from "./Visualize";
+import { CustomViz } from "./Visualize";
 
 import styles from "./AppRouter.module.scss";
 
@@ -33,11 +33,21 @@ const AppRouter: React.FC = () => {
                     <Route exact path="/welcome" component={Welcome} />
                     <Route exact path="/in" component={Insight} />
                     <Route exact path="/insight" component={Custom} />
-                    <Route exact path="/custom" component={Visualize} />
-                    <Route exact path="/dashboard" component={() => <Page>Content for non-logged users <br /><br /><br /> Empty NOW </Page>} />
+                    <Route exact path="/custom" component={CustomViz} />
+                    <Route
+                        exact
+                        path="/dashboard"
+                        component={() => (
+                            <Page>
+                                Content for non-logged users <br />
+                                <br />
+                                <br /> Empty NOW{" "}
+                            </Page>
+                        )}
+                    />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/logout" component={Logout} />
-                    {/* DELETE THIS LINE <Redirect to="/welcome" />*/} 
+                    {/* DELETE THIS LINE <Redirect to="/welcome" />*/}
                     {/* Uncomment the next line if you want to redirect unauthorized users to login form */}
                     {/* <RedirectIfNotLoggedIn /> */}
                 </WorkspaceProvider>
