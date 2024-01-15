@@ -5,6 +5,8 @@ It was bootstrapped with [@gooddata/app-toolkit](https://sdk.gooddata.com/goodda
 
 See it action by running `npm start` command.
 
+![screen](./screen.png)
+
 ## Quick Introduction
 
 The project includes:
