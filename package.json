@@ -32,9 +32,12 @@
         "@gooddata/sdk-ui-filters": "9.5.0",
         "@gooddata/sdk-ui-geo": "9.5.0",
         "@gooddata/sdk-ui-pivot": "9.5.0",
+        "d3": "^7.8.5",
+        "d3-axis-for-react": "^1.1.1",
         "highcharts": "^11.3.0",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "recharts": "^2.10.4"
     },
     "devDependencies": {
         "@babel/core": "^7.23.5",

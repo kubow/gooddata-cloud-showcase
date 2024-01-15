@@ -1,6 +1,8 @@
 import React from "react";
 import { idRef } from "@gooddata/sdk-model";
 import { useInsightDataView } from "@gooddata/sdk-ui";
+import Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react';
 import * as Md from "./catalog.js";
 
 export const Scatter = () => {
@@ -17,26 +19,31 @@ export const Scatter = () => {
 
     const slices = result.data().slices().toArray();
 
+    console.log(slices);
 
+    const options = {
+        chart: {
+          type: 'scatter',
+        },
+        title: {
+          text: 'Scatter Plot with Custom Data',
+        },
+        xAxis: {
+          title: {
+            text: 'X Axis',
+          },
+        },
+        yAxis: {
+          title: {
+            text: 'Y Axis',
+          },
+        },
+        series: data,
+      };
 
     return (
-        <table style={{border:'1px solid'}}>
-            <tbody>
-                {slices.map((slice) => {
-                    const title = slice.sliceTitles().join(" - ");
-                    const value = slice
-                        .dataPoints()
-                        .map((dp) => dp.rawValue)
-                        .join(", ");
-
-                    return (
-                        <tr key={title}>
-                            <td style={{border:'1px solid'}}>{title}</td>
-                            <td style={{border:'1px solid'}}>{value}</td>
-                        </tr>
-                    );
-                })}
-            </tbody>
-        </table>
+        <div>
+            <HighchartsReact chart={Highcharts.chart('scatter-plot', options)} />
+        </div>
     );
 };

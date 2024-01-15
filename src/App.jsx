@@ -6,7 +6,8 @@ import { Dashboard } from "@gooddata/sdk-ui-dashboard";
 
 import { backend } from "./backend.js";
 import { RawTable } from "./CustomData.jsx";
-import { Scatter } from "./CustomVisual.jsx";
+import { CustomReScatter } from "./CustomRecharts.jsx";
+//import { CustomD3Scatter } from "./CustomD3.jsx";
 import * as Md from "./catalog.js";
 import img from "./assets/gooddata-logo.svg";
 
@@ -47,9 +48,16 @@ export const App = () => {
                     </p>
                     <RawTable />
                     <p>
-                        And finally a custom visual:
+                        And finally a custom visual using ReCharts:
                     </p>
-                    <Scatter />
+                    <CustomReScatter />
+                    <p>
+                        Also a custom visual using D3:
+                    </p>
+                    {/* <CustomD3Scatter /> */}
+                    <p>
+                        Ultimately Highcharts can be also here, just not get to that yet.
+                    </p>
                     <footer>
                         <img src={img} alt="" />
                         <a
