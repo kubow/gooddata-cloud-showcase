@@ -8,6 +8,7 @@ import { backend } from "./backend.js";
 import { RawTable } from "./CustomData.jsx";
 import { CustomReScatter } from "./CustomRecharts.jsx";
 //import { CustomD3Scatter } from "./CustomD3.jsx";
+import CustomHighchart from "./CustomHighcharts.jsx";
 import * as Md from "./catalog.js";
 import img from "./assets/gooddata-logo.svg";
 
@@ -56,8 +57,9 @@ export const App = () => {
                     </p>
                     {/* <CustomD3Scatter /> */}
                     <p>
-                        Ultimately Highcharts can be also here, just not get to that yet.
+                        Also a custom visual using D3:
                     </p>
+                    <CustomHighchart />{/*  */}
                     <footer>
                         <img src={img} alt="" />
                         <a
